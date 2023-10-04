@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+    <title>GEEK ROCK RING</title>
+    <meta name="description" content="A webring for .">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<div><h1><img src="spinnyguitar2.gif" width=100>GEEK ROCK RING <img src="spinnyguitar2.gif" width=100></h1>
+    <a href="members.html">members list</a> <img src="cd.gif" width="20"><a href="placeholder.html">resources</a><img src="cd.gif" width="20"><a href="admin.html">who runs this thing?!</a>
+    <p>The Geek Rock Ring is a webring for fans of the geek rock genre, especially those with an interest in preserving the spirit of the old web. Anyone with their own site and a love for quirky tunes, catchy lyrics and clever eclecticism is welcome to join.</p>
+    <img id="divider" src="piano.gif"><img id="divider" src="piano.gif"><img id="divider" src="piano.gif"><img id="divider" src="piano.gif"><img id="divider" src="piano.gif"><img id="divider" src="piano.gif"><img id="divider" src="piano.gif"><img id="divider" src="piano.gif"><img id="divider" src="piano.gif"><img id="divider" src="piano.gif">
+    <h2>wait, what's geek rock?</h2>
+    <p>Geek rock -- also called nerd rock or dork rock -- is a subgenre of alternative rock characterized by witty lyrics, punchy melodies, and overall priding in a "nerdy" aesthetic. They Might Be Giants, Lemon Demon, Logan Whitehurst, Little Tin Frog and DEVO are just a few musical acts that come to mind, <a href="https://en.wikipedia.org/wiki/List_of_geek_rock_artists">but the list is pretty extensive.</a></p>
+ <h2>what's a webring?</h2>
+    <p>A webring is a collection of websites that are centered around a certain topic -- this topic can be anything, but most are based around some kind of interest or subculture. Websites in a webring are linked together in the shape of a circle, hence the 'ring' part.<br><br>
+        
+        If you're reading this, you're probably already familiar with what webrings are and how they work -- but just in case you aren't, <a href="history.html">here's a brief history</a> for the pleasure of your eyeholes.<br></p>
+     <h2>how do i join?</h2>
+    <p>Just add this code to your site and type your site's URL in the box below. This allows me to add it to the member's list.</p> <textarea rows="4" cols="50" id="question" placeholder="Type your site's URL here and click 'send'!"></textarea>
+<button id="send">Send</button>
+     <h2>are there any requirements to join?</h2>
+    <ul>
+    <li>You need to have a site, obviously.</li>
+    <li>Your site cannot perpetuate bigotry of any kind.</li>
+    <p>Other than that, it's pretty much fair game. It helps if you like geek rock, though.</p></ul>
+    
+    </div>
+
+<script>document.getElementById('send').onclick = function() {
+var request = new XMLHttpRequest();
+request.open("POST", "https://discord.com/api/webhooks/1159224767279288400/HY_y6ylu3Dm10OhoyC-mFsCueCoDKAg6lwANNTNVTELlMGXWnz02QlxhnDAkxfxWqp_w");
+    request.setRequestHeader('Content-type', 'application/json');
+var params = {
+    username: "Question"+new Date().getTime(), // you can make this whatever you want
+    content: document.getElementById("question").value
+}
+request.send(JSON.stringify(params));
+
+// below gives your user some helpful feedback letting them know their message has been sent
+alert('Thanks for joining the GRR! Your site will be added to the member list.);
+// below clears the form fields after submission
+document.getElementById("question").value = '';
+                        }
+</script>
+ 
+</body>
